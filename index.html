@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zhi Pan</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+        </script> 
+        <script src="js/skrollr.js"></script>
+        <script src = "assets/js/script.js"></script>
+        
+    </head>
+    <body>
+    <div id="wrapper">
+
+    <nav id="nav-bar">
+        <div class="nav-items-container">
+            <div class="current">MENU</div>
+            <div class="nav-item n1">
+                <a href="#slide-1"><div class="delay-fix">HOME</div></a>
+            </div>
+            <div class="nav-item n2">
+                <a href="#slide-2"><div class="delay-fix">ABOUT</div></a>
+            </div>
+            <div class="nav-item n3">
+                <a href="#slide-3"><div class="delay-fix">WORK</div></a>
+            </div>
+            <div class="nav-item n4">
+                <a href="#slide-4"><div class="delay-fix">RECS</div></a>
+            </div>
+            <div class="nav-item n5">
+                <a href="#slide-5"><div class="delay-fix">MISC</div></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </nav>
+    <section id="slide-1" class="section">
+        <div class="bcg">
+
+            <div class="dark-overlay"></div>
+
+            <div class="bio-container">
+                <div class="bio">
+                    <div class="hover-hide">ZHI PAN</div>
+                    <div class="hover-show">
+                        <div class="center-container2">
+                            <a href="">
+                                <div class="social-media">
+                                    <img class="monochrome-icon" src="assets/img/facebook.png">
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="social-media">
+                                    <img class="monochrome-icon" src="assets/img/twitter.png">
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="social-media">
+                                    <img class="monochrome-icon" src="assets/img/linkedin.png">
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="social-media">
+                                    <img class="monochrome-icon" src="assets/img/dribble.png">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="bio">
+                    <div class="hover-hide">WEB DEVELOPER</div>
+                    <div class="hover-show">HTML5 | CSS3 | JAVASCRIPT | ANGULARJS </div>
+                </div>
+                <hr>
+                <!-- currently exploring: transportation...viral marketing...-->
+                <div id="revolving-text-container" class="bio">
+                    <div class="hover-hide">ADVENTURER</div>
+                    <div class="hover-show">CURRENTLY EXPLORING: <span id="revolving-text">TRANSPORTATION</span> </div>
+                </div> 
+            </div>
+
+            <a href="#slide-2"><div class="down-arrow"></div></a>
+
+        </div>
+    </section>
+
+    <section id="slide-2" class="section-divide">
+        <div class="bcg">
+            <div class="dark-overlay"></div>
+             <div class="bio-container2">
+                <div class="box-outline">
+                <div class="bio-header">About Me</div>
+                <hr class="special-divider">
+                <div class="bio-content">Computer science and Business double major at UcBerkeley. Die-hard Suits fan. Pretty good crossover in basketball. </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <section id="slide-3" class="section">
+        <div class="bcg">
+
+            <div class="adventure-header">
+                <div class="adventure-nav">
+                    <span id="projects" class="adventure-text adventure-text-active">Work</span> 
+                    <span class="adventure-divider"></span> 
+                    <span id="skills" class="adventure-text">Skills</span>
+                </div>
+            </div>
+
+            <div class = "adventure-container">
+                <!-- Question 2: Carousel Code Here -->
+                <div class="adventure" id="work-carousel">
+                    
+                    <div class="adventure-item">
+                        <div class="pursuits-container">
+
+                            <div id="nav-left" class="pursuit-nav pursuit-nav-left">
+                                <div class="arrow-container">
+                                    <img class="nav-arrow" src="assets/img/left-arrow.png">
+                                </div>
+                            </div>
+                            <div id="nav-right" class="pursuit-nav pursuit-nav-right pursuit-nav-active">
+                                <div class="arrow-container">
+                                    <img class="nav-arrow" src="assets/img/right-arrow.png">
+                                </div>    
+                            </div>
+
+                            <div class="hide-scroll">
+                                <div class="pursuits-slider work-slider">
+                                    <div class="center-container">
+
+                                        <div class="pursuit work-item">
+                                            <div class="pursuit-outline">
+                                                <div class="work-img-container">
+                                                    <img class="work-img" src="assets/img/1.png">
+                                                </div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title work-title hide">Lonely Giraffes</div>
+                                                    <div class="pursuit-content work-content hide">
+                                                        <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more hide">Learn More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pursuit work-item">
+                                            <div class="pursuit-outline">
+                                                <div class="work-img-container">
+                                                    <img class="work-img" src="assets/img/anomo.png">
+                                                </div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title work-title hide">Anomo</div>
+                                                    <div class="pursuit-content work-content hide">
+                                                        <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more hide">Learn More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit work-item">
+                                            <div class="pursuit-outline">
+                                                <div class="work-img-container">
+                                                    <img class="work-img" src="assets/img/haiku.jpg">
+                                                </div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title work-title hide">Haiku</div>
+                                                    <div class="pursuit-content work-content hide">
+                                                        <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more hide">Learn More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                   
+         
+
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="adventure-item">
+                        <div class="pursuits-container">
+                            <div class="hide-scroll scrollable">
+                                <div id= "skills-slider"class="pursuits-slider">
+                                    <div class="center-container">
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title ">HTML5</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">CSS3</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">Javascript</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">Python</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">AngularJs</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+         
+
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scroll-instructions">&#60; Scroll ></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="slide-4" class="section-divide">
+        <div class="bcg">
+            <div class="dark-overlay"></div>
+            <div class = "carousel-container">
+                
+                <div id="carousel">
+                    <div class="carousel-item">
+                        <div class="quote">
+                            Highly recommended
+                            <div class="author">My mom</div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="quote">
+                            Who are you? How'd you get in my office...
+                            <div class="author">Mark Zuck</div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="quote">
+                            Zhi's pretty great
+                            <div class="author">Zhi Pan</div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="quote">
+                            Free Labor! ... I mean best hire ever
+                            <div class="author">Previous internship, unpaid</div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="quote">
+                            You're bleeding because you don't floss, Zhi
+                            <div class="author">My Dentist (after stabing my mouth)</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                    <div id="carousel-prev">
+                    </div>
+                    <div id="carousel-next">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="slide-5" class="section">
+        <div class="bcg">
+
+            <div class="adventure-header">
+                <div class="adventure-nav">
+                    <span id="avid-reader"class="adventure-text adventure-text-active">Avid Reader</span> 
+                    <span class="adventure-divider"></span> 
+                    <span id="explorer-of-ideas"class="adventure-text">Explorer of ideas</span>
+                </div>
+            </div>
+
+            <div class = "adventure-container">
+                
+                <div class="adventure" id="more-about-me-carousel">
+                    
+                    <div class="adventure-item">
+                        <div class="adventure-section-container">
+                            <div class="adventure-section">
+                                <div class="book-container">
+                                    <div class="book-img" id="book1"></div>
+                                    <div class="book-overlay"></div>
+                                    <div class="review-container">
+                                        <div id="book-review-1" class="review">
+                                            <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad, consectetur adipiscing elit . . .</span>
+                                        </div>
+                                        <div id="book-review-2" class="review">
+                                            <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua . . .</span>
+                                        </div>
+                                        <div id="book-review-3" class="review">
+                                            <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad, consectetur adipiscing elit . . .</span>
+                                        </div>
+                                        <div id="book-review-4" class="review">
+                                            <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad, consectetur adipiscing elit . . .</span>
+                                        </div>
+                                        <div id="book-review-5" class="review">
+                                            <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad, consectetur adipiscing elit . . .</span>
+                                        </div>
+                                        <div id="book-review-6" class="review">
+                                            <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad, consectetur adipiscing elit . . .</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="adventure-section">
+                                <div class="section-header">Favorite Books</div>
+                                <div id="book-title-1" class="book-title">Contagious</div>
+                                <div id="book-title-2" class="book-title">How To Win Friends and Influence People</div>
+                                <div id="book-title-3" class="book-title">Crossing the Chasm</div>
+                                <div id="book-title-4" class="book-title">Business Model Generation</div>
+                                <div id="book-title-5" class="book-title">The Stranger</div>
+                                <div id="book-title-6" class="book-title">Fresh Off the Boat</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="adventure-item">
+                        <div class="pursuits-container">
+                            <div class="hide-scroll scrollable">
+                                <div class="pursuits-slider">
+                                    <div class="center-container">
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">AngularJs</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title" id="pursuit-test">Web Dev Decal</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">Caresharing</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">Filler</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">Filler</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">Filler</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">Filler</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">Filler</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pursuit">
+                                            <div class="pursuit-outline">
+                                                <div class="pursuit-overlay"></div>
+                                                <div class="pursuit-info">
+                                                    <div class="pursuit-title">Filler</div>
+                                                    <div class="pursuit-content">
+                                                        <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Ut enim ad . . .</span>
+                                                    </div>
+                                                    <div class="see-more">See More</div>
+                                                </div>
+                                            </div>
+                                        </div>
+         
+
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scroll-instructions">&#60; Scroll ></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+    </div>
+    </body>
+</html>
