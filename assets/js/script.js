@@ -261,9 +261,7 @@ $(document).ready(function() {
   	},1500)
   }
 
-  $("#revolving-text-container").hover(swap_text(), function() {
-  	clearInterval(clear);
-  });
+  $("#revolving-text-container").hover(swap_text());
 
   load();
 
