@@ -165,146 +165,91 @@ hr {
 
 /* nav bar */
 
-#nav-bar {
+#side-bar-UX {
 	position: fixed;
-	height: 60px;
 	width: 100%;
-	z-index: 199;
-
+	height: 300px;
+	z-index: 10;
+	transition: all ease 0.4s;
 }
 
-.nav-items-container {
-	width: 140px;
-	height: 80px;
-
-	position: absolute;
-	right: 120px;
-
+#side-bar-UX:hover #side-bar {
+	top: 0;
+	transition: all ease 0.4s;
 }
 
-.nav-item {	
-	color: rgb(196, 159, 60);
-	font-size: 24px;
-	letter-spacing: 2px;
-	text-align: center;
-	line-height: 80px;
-	width: 140px;
-	height: 80px;
-	background-color: #171717;
+
+
+#side-bar {
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	background-color: rgba(23, 23, 23, 0.5);
+	transition: all ease 0.4s;
 	cursor: pointer;
-	-webkit-transform-origin: 50% 0%;
-	-o-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
-	-webkit-transform: perspective(350px) rotateX(-90deg);
-	-o-transform: perspective(350px) rotateX(-90deg);
-	transform: perspective(350px) rotateX(-90deg);
+	z-index: 999
+}
+
+.side-bar-show {
+	top: 0;
+}
+
+.side-bar-hide {
+	top: -50px;
+	transition: all ease 0.4s;
+}
+
+#side-bar:hover {
+	height: 100px;
+	transition: all ease 0.4s;
+}
+
+#side-bar:hover .nav-item {
+	height: 100px;
+	line-height: 100px;
+	transition: all ease 0.4s;
+	opacity: 1
+}
+
+
+
+.nav-items {
+	height: 50px;
+	width: 750px;
+	margin: auto;
+}
+
+.nav-item {
+	width: 150px;
+	height: 50px;
+	float: left;
+	line-height: 50px;
+	color: white;
+	text-align: center;
+	letter-spacing: 4px;
+	font-weight: 800;
+	opacity: 0.5;
+	transition: all ease 0.4s;
+}
+
+.nav-item:hover {
+	color: rgb(196, 159, 60);
+}
+
+
+
+
+.menu-overlay-active {
+	opacity: 0.8;
 }
 
 .current {
-	color: white;
-	font-size: 24px;
-	letter-spacing: 2px;
-	text-align: center;
-	line-height: 80px;
-	width: 140px;
-	height: 80px;
-	background-color: rgba(196, 159, 60, 0.8);
-	cursor: pointer;
-}
-
-.current:hover {
-	background-color: rgb(196, 159, 60);
+	color: rgb(196, 159, 60);
+	opacity: 1;
+	transition: all ease 0.4s;
 }
 
 
-.nav-active {
-	background-color: rgba(196, 159, 60, 0.6);
-	color: white;
-	display: block;
-}
-
-
-
-
-/*test */
-
-
-/* NAVIGATION */
-
-
-.delay-fix {
-	top: 0;
-	left: 0;
-	position: absolute;
-	width: 140px;
-	height: 80px;
-}
-
-.delay-fix:hover {
-	background-color: rgb(196, 159, 60);
-	color: white;
-}
-
-.delay-fix:hover {
-
-}
-
-
-.n1 { 
-  -webkit-transition: 0.2s ease 0.8s;
-  -o-transition: 0.2s ease 0.8s;
-  transition: 0.2s ease 0.8s;
-}
-.n2 {
-  -webkit-transition: 0.2s ease 0.6s;
-  -o-transition: 0.2s ease 0.6s;
-  transition: 0.2s ease 0.6s;
-}
-.n3 {
-  -webkit-transition: 0.2s ease 0.4s;
-  -o-transition: 0.2s ease 0.4s;
-  transition: 0.2s ease 0.4s;
-}
-.n4 { 
-  -webkit-transition:0.2s ease 0.2s;
-  -o-transition:0.2s ease 0.2s;
-  transition:0.2s ease 0.2s;
-}
-.n5 {
-
-  -webkit-transition: 0.2s ease 0s;
-  -o-transition: 0.2s ease 0s;
-  transition: 0.2s ease 0s;
-}
-
-.nav-items-container:hover .nav-item {
-  -webkit-transform: perspective(350px) rotateX(0deg);
-  -o-transform: perspective(350px) rotateX(0deg);
-  transform: perspective(350px) rotateX(0deg);
-  -webkit-transition:0.2s ease 0s;
-  -o-transition:0.2s ease 0s;
-  transition:0.2s ease 0s;
-}
-.nav-items-container:hover .n2 {
-  -webkit-transition-delay: 0.2s;
-  -o-transition-delay: 0.2s;
-  transition-delay: 0.2s;
-}
-.nav-items-container:hover .n3 {
-  -webkit-transition-delay: 0.4s;
-  -o-transition-delay: 0.4s;
-  transition-delay: 0.4s;
-}
-.nav-items-container:hover .n4 {
-  transition-delay: 0.6s;
-  -o-transition-delay: 0.6s;
-  transition-delay: 0.6s;
-}
-.nav-items-container:hover .n5 {
-  -webkit-transition-delay: 0.8s;
-  -o-transition-delay: 0.8s;
-  transition-delay: 0.8s;
-}
 
 
 
@@ -483,7 +428,7 @@ hr {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	z-index: 99;
+	z-index: 5;
 	background-color: #171717;
 	margin-top: 49px;
 	background-image: url(../img/stardust.png);
@@ -593,6 +538,7 @@ hr {
 
 	height: 20%;
 	text-align: center;
+
 }
 
 .adventure-nav {
@@ -603,6 +549,7 @@ hr {
 	font-weight: 100;
 	/* margin: 0 auto; */
 	width: 100%;
+	z-index: 20
 }
 
 .adventure-text {
@@ -610,6 +557,7 @@ hr {
 	margin: 20px;
 	opacity: 0.5;
 	cursor: pointer;
+	
 }
 
 .adventure-text:hover {
@@ -630,7 +578,7 @@ hr {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	z-index: 99;
+	z-index: 5;
 }
 
 
@@ -1098,3 +1046,5 @@ img {
 #skills-slider {
 	width: 2000px;
 }
+
+
