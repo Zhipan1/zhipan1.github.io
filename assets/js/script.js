@@ -206,6 +206,10 @@ $(document).ready(function() {
   	activate_title(title1);
   	activate_review(review1);
   	$(".section").css("height", screensize);
+    setTimeout(function() {
+      loadNavPlaces();
+      console.log(navPlace)
+    },500)
   }
 
   $(".book-title").click(function() {
@@ -233,11 +237,99 @@ $(document).ready(function() {
 
   /*scrolling shit */
 
-  $("a").click(function() {
+  $("a").click(function(e) {
+    e.preventDefault();
+    var key = "#nav-" + String($(this).attr('href')).slice(-1);
     $('html, body').animate({
-      scrollTop: $( $.attr(this, 'href')).offset().top
+      scrollTop: navPlace[key]
     }, 1000);
+    $(".current").removeClass("current");
+    $(this).children().addClass("current")
   });
+
+
+
+  var didScroll = false;
+  var lastScrollTop = 0;
+  var delta = 10;
+  var screensize = $(window).height();
+  var navbarHeight = 50;
+  var navPlace = {"#nav-1": 0};
+
+
+  function loadNavPlaces () {
+    for (var i = 2; i < 6; i++) {
+      var nav = "#nav-" + i
+      var slide = "#slide-" + i
+      var place = $(slide).position().top
+      var slide_size = $(slide).height()
+      // vertically center smaller sections
+      if (slide_size < screensize) {
+        var top = Math.floor(place - (screensize - slide_size)/2)
+        navPlace[nav] = top
+      }
+      else {
+        navPlace[nav] = place
+      }
+    }
+  }
+
+
+
+
+  $(window).scroll(function(event) {
+    didScroll = true;
+  })
+
+  setInterval(function() {
+    if (didScroll) {
+      hasScrolled();
+    }
+    didScroll = false;
+  },250)
+
+  function findNavPlace() {
+    var st = $(this).scrollTop();
+    var place = $(".current").attr("id")
+    for (var i in navPlace) {
+      if (navPlace[i] <= st) {
+        place = i
+      }
+    }
+    if ("#" + $(".current").attr("id") == place) {
+      return false;
+    }
+    $(".current").removeClass("current");
+    $(place).addClass("current");
+
+  }
+
+  function hasScrolled() {
+    var st = $(this).scrollTop();
+    var current_delta = Math.abs(lastScrollTop - st);
+    findNavPlace();
+
+    if (current_delta < delta) {
+      return false;
+    }
+    if (st > lastScrollTop && st > navbarHeight) {
+      $("#side-bar").addClass("side-bar-hide")
+      lastScrollTop = st
+    }
+    else if (st + $(window).height() < $(document).height()) {
+      setTimeout(function() {
+        $("#side-bar").removeClass("side-bar-hide");
+        lastScrollTop = st
+      },500)
+
+    }
+
+    else {
+      return false
+    }
+  }
+
+  
 
   /*hover shit */
 
@@ -249,19 +341,17 @@ $(document).ready(function() {
 	  	"Crime-Fighting", "Transporation", "Investing"]
 	  	var text = $("#revolving-text")
 	  	var random = Math.floor(exploring.length * Math.random());
-	  	function intervalManager() {
-		  	var k =	setInterval(function() {
+      setInterval(function() {
 		  		var new_text = exploring[random]
 		  		text.text(new_text)
 		  		random = Math.floor(exploring.length * Math.random());
 		  	}, 1000)
-		  	return k
-	  	}
-	  	clear = intervalManager()
-  	},1500)
+  	}, 1000)
   }
 
-  $("#revolving-text-container").hover(swap_text());
+  $("#revolving-text-container").hover(swap_text(), function() {
+  	clearInterval(clear);
+  });
 
   load();
 
