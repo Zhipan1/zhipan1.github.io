@@ -210,6 +210,7 @@ $(document).ready(function() {
       loadNavPlaces();
       console.log(navPlace)
     },500)
+    $("#carousel-prev").css("opacity", 0.4);
   }
 
   $(".book-title").click(function() {
