@@ -187,7 +187,7 @@ hr {
 	background-color: rgba(23, 23, 23, 0.5);
 	transition: all ease 0.4s;
 	cursor: pointer;
-	z-index: 999
+	z-index: 80
 }
 
 .side-bar-show {
@@ -337,6 +337,19 @@ hr {
 
 }
 
+#resume-icon {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 1px solid rgb(196, 159, 60) ;
+	opacity: 0.84;
+	transition: all ease 0.2s;
+}
+
+#resume-img {
+	width: 30px;
+}
+
 .monochrome-icon {
 	
 	transition: all ease 0.2s;
@@ -344,7 +357,7 @@ hr {
 
 }
 
-.monochrome-icon:hover {
+.monochrome-icon:hover, #resume-icon:hover {
 	transition: all ease 0.2s;
     -webkit-transform:scale(1.1); /* Safari and Chrome */
     -moz-transform:scale(1.1); /* Firefox */
@@ -911,7 +924,7 @@ img {
 
 .work-slider {
 	margin-left: 200px;
-	width: 2600px;
+	width: 3600px;
 }
 
 .work-item {
@@ -1047,4 +1060,199 @@ img {
 	width: 2000px;
 }
 
+/* work examples */
+
+.learn-more {
+	display: none;
+	position: fixed;
+	width: 90%;
+	height: 90%;
+	top: 5%;
+	left: 5%;
+	background: rgb(0, 0, 0);
+	z-index: 100;
+	border: 1px solid rgb(196, 159, 60);
+	opacity: 0;
+	transition: 0.5s ease;
+	-webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.learn-more.active {
+	opacity: 1;
+	-webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.learn-more-overlay {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-color: black;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	transition: 0.5s ease;
+
+}
+
+.learn-more-overlay.active {
+	opacity: 0.6
+}
+
+.learn-more-workplace {
+    color: rgb(196, 159, 60);
+    width: 80%;
+		margin-left: 10%;
+    padding-top: 10%;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.learn-more-date {
+    color: rgb(196, 159, 60);
+    width: 80%;
+		margin-left: 10%;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.learn-more-container {
+	height: 100%;
+}
+
+.learn-more-info {
+	position: relative;
+	width: 40%;
+	height: 100%;
+	border-right: 1px solid rgb(196, 159, 60);
+	float: left;
+}
+
+.learn-more-close {
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	text-align: center;
+	color: red;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.learn-more-description {
+	color: whitesmoke;
+	opacity: 0.6;
+	font-weight: bold;
+	width: 80%;
+	margin-left: 10%;
+	font-size: 24px;
+	margin-top: 30px;
+	line-height: 1.5;
+}
+
+.learn-more-work {
+	position: relative;
+	width: calc(60% - 1px);
+	height: 100%;
+	float: left;
+	overflow: scroll;
+}
+
+.learn-more-item {
+	width: 80%;
+	height: 350px;
+	background-color: white;
+	overflow: hidden;
+	margin-left: 10%;
+	margin-top: 50px;
+	border: 4px solid rgb(196, 159, 60);
+	position: relative;
+}
+
+.learn-more-item:last-child {
+	margin-bottom: 50px;
+}
+
+
+.learn-more-item:hover .work-item-overlay{
+	opacity: 0.72;
+
+}
+
+.learn-more-item:hover .work-item-title, 
+.learn-more-item:hover a.work-item-link,
+.learn-more-item:hover .work-item-subtitle {
+	opacity: 1;
+	transition: 0.3s ease;
+}
+
+img.work-item-img {
+	width: 100%;
+	position: absolute;
+}
+
+.work-item-title {
+	color: rgb(196, 159, 60);
+	text-align: center;
+	margin-top: 100px;
+	font-size: 32px;
+	letter-spacing: 4px;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 20;
+	opacity: 0;
+}
+
+.work-item-subtitle {
+	color: rgb(196, 159, 60);
+	text-align: center;
+	margin-top: 30px;
+	width: 70%;
+	margin-left: 15%;
+	font-size: 18px;
+	letter-spacing: 2px;
+	position: relative;
+	z-index: 20;
+	font-weight: bold;
+	opacity: 0
+}
+
+
+a.work-item-link {
+	color: rgb(196, 159, 60);
+	font-size: 18px;
+	letter-spacing: 4px;
+	font-weight: bold;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	bottom: 50px;
+	z-index: 20;
+	opacity: 0
+}
+a.work-item-link:hover {
+	text-decoration: underline;
+}
+
+.work-item-overlay {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: 0.3s ease;
+}
 

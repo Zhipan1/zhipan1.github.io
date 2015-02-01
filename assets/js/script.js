@@ -33,13 +33,13 @@ $(document).ready(function() {
 
   $("#nav-right").click(function() {
     var current_margin = parseInt($('.work-slider').css('margin-left').replace("px", ""))
-    if (current_margin >= 2400) {
+    if (current_margin >= 3200) {
       return false;
     }
     else {
       var new_margin = current_margin - 800;
       $(".work-slider").css("margin-left", new_margin)
-      if (new_margin <= -1400) {
+      if (new_margin <= -2200) {
       	setTimeout(function() {
 			$("#nav-right").hide();
       	}, 600);
@@ -352,6 +352,32 @@ $(document).ready(function() {
   $("#revolving-text-container").hover(swap_text(), function() {
   	clearInterval(clear);
   });
+
+  /*see more */
+
+  $("a").click(function() {
+    window.location.href = $(this).attr("href");
+  })
+
+  $("#gradescope-link").click(function() {
+    $("#gradescope").show();
+    $(".learn-more-overlay").show();
+    setTimeout(function() {
+      $("#gradescope").addClass("active");
+      $(".learn-more-overlay").addClass("active");
+    }, 50)
+    $("body").css("overflow", "hidden")
+  });
+
+  $(".learn-more-close").click(function() {
+    setTimeout(function() {
+      $(".learn-more").hide();
+      $(".learn-more-overlay").hide();
+    }, 500)
+    $("#gradescope").removeClass("active");
+    $(".learn-more-overlay").removeClass("active");
+    $("body").css("overflow", "visible")
+  })
 
   load();
 
