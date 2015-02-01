@@ -1,0 +1,681 @@
+<html>
+	<head>
+		<title></title>
+
+		<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	    
+	    <link rel="stylesheet" type="text/css" href="assets/stylesheet/style.css">
+	    
+    	<script src="assets/javascript/jquery-1.8.3.min.js"></script>
+		<script src="assets/javascript/jquery-ui-1.9.2.min.js"></script>
+	    <script type="text/javascript" src="assets/javascript/script.js" charset="utf-8"></script>
+	</head>
+	
+	<body>
+		<nav id="sidebar" class="sidebar-collapsible">
+
+		<div id="collapse-menu" class="collapse-menu">
+				<div id="collapse-menu-icon">
+					<img id="collapse-menu-img" src="assets/img/menu.svg">
+				</div>
+				<div class="collapse-menu-text">Menu</div>
+		</div>
+		
+		<div class="sidebar-content-collapsible">	
+			<div id="sidebar-logo">
+				<img id="sidebar-logo-icon" src="assets/img/logo.png">
+				<div id="sidebar-logo-text">gradescope</div>
+				<div class="clear"></div>
+			</div>
+
+			<div id="sidebar-prev">
+				<img id="sidebar-prev-img" src="assets/img/arrow_left.svg">
+				<div id="sidebar-prev-text">CS 198</div>
+				<div class="clear"></div>
+			</div>
+
+			<div id="sidebar-description">
+				<div id="sidebar-class-container">
+					<div id="sidebar-class-title">Homework 1</div>
+					<div id="sidebar-class-subtitle">20 points</div>
+				</div>
+				<div id="sidebar-class-description">Making modal boxes and login pages. Late submissions not accepted</div>
+			</div>
+
+			<div id="sidebar-gradeflow">
+				<div class="sidebar-gradeflow-item">
+					<div class="sidebar-checkbox sidebar-checkbox-checked">
+						<img class="sidebar-checkbox-img" src="assets/img/check.svg">
+					</div>
+					<div class="sidebar-checkbox-text">Upload Template</div>
+					<div class="clear"></div>
+				</div>
+				<div class="sidebar-gradeflow-item">
+					<div class="sidebar-checkbox sidebar-checkbox-checked">
+						<img class="sidebar-checkbox-img" src="assets/img/check.svg">
+					</div>
+					<div class="sidebar-checkbox-text">Create Outline</div>
+					<div class="clear"></div>
+				</div>
+				<div class="sidebar-gradeflow-item">
+					<div class="sidebar-checkbox sidebar-checkbox-checked">
+						<img class="sidebar-checkbox-img" src="assets/img/check.svg">
+					</div>
+					<div class="sidebar-checkbox-text">Import Submission</div>
+					<div class="clear"></div>
+				</div>
+				<div class="sidebar-gradeflow-item">
+					<div class="sidebar-checkbox sidebar-checkbox-checked">
+						<img class="sidebar-checkbox-img" src="assets/img/check.svg">
+					</div>
+					<div class="sidebar-checkbox-text">Verify Submission</div>
+					<div class="clear"></div>
+				</div>
+				<div class="sidebar-gradeflow-item">
+					<div class="sidebar-checkbox sidebar-checkbox-checked">
+						<img class="sidebar-checkbox-img" src="assets/img/check.svg">
+					</div>
+					<div class="sidebar-checkbox-text">Grade Submission</div>
+					<div class="clear"></div>
+				</div>
+				<div class="sidebar-gradeflow-item">
+					<div class="sidebar-checkbox sidebar-checkbox-checked">
+						<img class="sidebar-checkbox-img" src="assets/img/check.svg">
+					</div>
+					<div class="sidebar-checkbox-text sidebar-nav-active">Review Grades</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+
+			<hr class="sidebar-divider"></hr>
+
+			<div id="sidebar-grading-nav">
+				<div class="sidebar-grading-item">
+					<div class="sidebar-grading-outline">
+						<img class="sidebar-grading-nav-img" src="assets/img/redo.svg">
+					</div>
+					<div class="sidebar-grading-nav-text">Regrade Requests</div>
+					<div class="clear"></div>
+				</div>
+				<div class="sidebar-grading-item">
+					<div class="sidebar-grading-outline">
+						<img class="sidebar-grading-nav-img" id="sidebar-stats-img" src="assets/img/logo.png">
+					</div>
+					<div class="sidebar-grading-nav-text">Statistics</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="sidebar-profile">
+				<div class="sidebar-profile-collapsible">
+					<div id="sidebar-profile-container">
+						<img id="sidebar-profile-img" src="assets/img/profile.jpg">
+						<div id="sidebar-profile-content">
+							<div id="sidebar-profile-name">Shawn Park</div>
+							<div id="sidebar-profile-school">Uc Berkeley</div>
+						</div>
+						<img id="sidebar-profile-menu" src="assets/img/menu.svg">
+						<div class="clear"></div>
+					</div>
+					<img id="sidebar-profile-img-collapsible" class="sidebar-profile-img-collapsed" src="assets/img/profile.jpg">
+					<div class="clear"></div>
+				</div>
+			</div>
+
+
+		</nav>
+
+
+
+		<div id="review" class="content-collapsible">
+			<div id="review-header">Review Grades</div>
+			<div id="review-chart">
+
+				<div id="chart-axis-y">
+					<div class="chart-axis-increment">
+						<div class="chart-axis-number-box">
+							<div class="chart-axis-number">50</div>
+						</div>
+						<hr class="chart-axis-line">
+						<div class="clear"></div>
+					</div>
+					<div class="chart-axis-increment">
+						<div class="chart-axis-number-box">
+							<div class="chart-axis-number">40</div>
+						</div>
+						<hr class="chart-axis-line">
+						<div class="clear"></div>
+					</div>
+					<div class="chart-axis-increment">
+						<div class="chart-axis-number-box">
+							<div class="chart-axis-number">30</div>
+						</div>
+						<hr class="chart-axis-line">
+						<div class="clear"></div>
+					</div>
+					<div class="chart-axis-increment">
+						<div class="chart-axis-number-box">
+							<div class="chart-axis-number">20</div>
+						</div>
+						<hr class="chart-axis-line">
+						<div class="clear"></div>
+					</div>
+					<div class="chart-axis-increment">
+						<div class="chart-axis-number-box">
+							<div class="chart-axis-number">10</div>
+						</div>
+						<hr class="chart-axis-line">
+						<div class="clear"></div>
+					</div>
+					<div class="chart-axis-increment">
+						<div class="chart-axis-number-box">
+							<div class="chart-axis-number">0</div>
+						</div>
+						<hr class="chart-axis-line chart-axis-zero">
+						<div class="clear"></div>
+					</div>
+				</div>
+
+				<div id="chart-axis-x">
+					<div class="axis-x-increment">10%</div>
+					<div class="axis-x-increment">20%</div>
+					<div class="axis-x-increment">30%</div>
+					<div class="axis-x-increment">40%</div>
+					<div class="axis-x-increment">50%</div>
+					<div class="axis-x-increment">60%</div>
+					<div class="axis-x-increment">70%</div>
+					<div class="axis-x-increment">80%</div>
+					<div class="axis-x-increment">90%</div>
+					<div class="axis-x-increment">100%</div>
+					<div class="clear"></div>
+				</div>
+
+				<div id="chart-distribution">
+					<div id="distribution-bar-1" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div id="distribution-bar-2" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div id="distribution-bar-3" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div id="distribution-bar-4" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div id="distribution-bar-5" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div id="distribution-bar-6" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div id="distribution-bar-7" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div id="distribution-bar-8" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div id="distribution-bar-9" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div id="distribution-bar-10" class="chart-distribution-bar">
+						<div class="distribution-bar-stat">
+							<div class="bar-stat-img">
+								<div class="bar-stat-line"></div>
+								<div class="bar-stat-circle"></div>
+							</div>
+							<div class="bar-stat-text">
+								<div class="bar-text-number">49</div>
+								<div class="bar-text-label">Students</div>
+								
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+
+			<div id="review-stats">
+				<div class="review-stats-item">
+					<div class="stats-item-title">Mean</div>
+					<div class="stats-item-data">73%</div>
+				</div>
+				<div class="review-stats-item">
+					<div class="stats-item-title">Minimum</div>
+					<div class="stats-item-data">21%</div>
+				</div>
+				<div class="review-stats-item">
+					<div class="stats-item-title">Maximum</div>
+					<div class="stats-item-data">100%</div>
+				</div>
+				<div class="review-stats-item">
+					<div class="stats-item-title">Median</div>
+					<div class="stats-item-data">68%</div>
+				</div>
+				<div class="review-stats-item">
+					<div class="stats-item-title">STD Dev</div>
+					<div class="stats-item-data">0.45</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div id="students-container">
+				<div id="students-header">
+					<img id="student-header-img" src="assets/img/user.svg">
+					<div id="student-header-text">118 Students</div>
+					<div id="student-header-search">
+						<input type="text" class="student-search-input" placeholder="Search">
+						<img id="header-search-img" src="assets/img/search.svg">
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="content-body-item" id="content-body-header">
+					<div class="content-item-name header-item">Student</div>
+					<div class="content-item-points header-item">Score (pts)</div>
+					<div class="content-item-percentage header-item">Score (%)</div>
+					<div class="content-item-email header-item">Email</div>
+					<div class="clear"></div>
+				</div>
+				<div id="student-roster-container">
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0</div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content-body-item">
+						<div class="content-item-name">Zhi Pan</div>
+						<div class="content-item-points">
+							<div class="points-scored">3.0 </div>
+							<div class="points-out-of"> / 3.0</div>
+						</div>
+						<div class="content-item-percentage">100%</div>
+						<div class="content-item-email">Zhilingpan@hotmail.com</div>
+						<div class="clear"></div>
+					</div>
+
+					<div class="clear"></div>
+				</div>
+
+				<div class="clear"></div>
+
+			</div>
+
+		</div>
+
+
+		<div id="grade-footer">
+			<div class="grade-footer-selection">2 Questions Selected</div>
+
+
+			<div id="footer-nav-cancel" class="grade-footer-nav">
+				<div class="footer-nav-icon">
+					<img class="footer-nav-img" id="grade-footer-cancel" src="assets/img/cancel.svg">
+				</div>
+				<div class="footer-nav-text">Cancel</div>
+			</div>
+
+			<div class="grade-footer-nav">
+				<div class="footer-nav-icon">
+					<img class="footer-nav-img" src="assets/img/new_folder.svg">
+				</div>
+				<div class="footer-nav-text">Add to Question 1</div>
+			</div>
+
+			<div class="grade-footer-nav">
+				<div class="footer-nav-icon">
+					<img class="footer-nav-img" src="assets/img/new_folder.svg">
+				</div>
+				<div class="footer-nav-text">Create a new question group</div>
+			</div>
+		</div>
+	</body>
+</html>
