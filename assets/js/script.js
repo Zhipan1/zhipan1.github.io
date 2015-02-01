@@ -237,14 +237,14 @@ $(document).ready(function() {
 
   /*scrolling shit */
 
-  $("a").click(function(e) {
+  $("#side-bar a, #nav-fix").click(function(e) {
     e.preventDefault();
     var key = "#nav-" + String($(this).attr('href')).slice(-1);
     $('html, body').animate({
       scrollTop: navPlace[key]
     }, 1000);
     $(".current").removeClass("current");
-    $(this).children().addClass("current")
+    $(this).children().addClass("current");
   });
 
 
@@ -354,10 +354,6 @@ $(document).ready(function() {
   });
 
   /*see more */
-
-  $("a").click(function() {
-    window.location.href = $(this).attr("href");
-  })
 
   $("#gradescope-link").click(function() {
     $("#gradescope").show();
