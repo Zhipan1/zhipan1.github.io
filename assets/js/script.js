@@ -356,22 +356,28 @@ $(document).ready(function() {
 
   /*see more */
 
-  $("#gradescope-link").click(function() {
-    $("#gradescope").show();
+  $(".see-more").click(function() {
+    id = $(this).attr("id")
+    end = id.length - 5
+    key = "#" + $(this).attr("id").slice(0, end)
+    console.log($(key))
+    $(key).show()
     $(".learn-more-overlay").show();
     setTimeout(function() {
-      $("#gradescope").addClass("active");
+      console.log(key)
+      $(key).addClass("active");
       $(".learn-more-overlay").addClass("active");
     }, 50)
     $("body").css("overflow", "hidden")
-  });
+  })
+
 
   $(".learn-more-close").click(function() {
     setTimeout(function() {
       $(".learn-more").hide();
       $(".learn-more-overlay").hide();
     }, 500)
-    $("#gradescope").removeClass("active");
+    $(".learn-more").removeClass("active");
     $(".learn-more-overlay").removeClass("active");
     $("body").css("overflow", "visible")
   })
