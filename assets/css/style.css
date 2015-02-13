@@ -1069,7 +1069,7 @@ img {
 	height: 90%;
 	top: 5%;
 	left: 5%;
-	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.90);
 	z-index: 100;
 	border: 1px solid rgb(196, 159, 60);
 	opacity: 0;
