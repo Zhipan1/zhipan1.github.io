@@ -102,47 +102,59 @@ hr {
 
 #slide-1 .bcg {
 	background-color: #171717;
-	background-image: url(../img/bloc-bg-contour.png);
+	background-image: url(https://unsplash.imgix.net/8/nepal.jpg?q=75&fm=jpg&s=6920b8ad1ec983a5cb94e304e8bc6d9f);
 	background-attachment: fixed;
-}
 
-#slide-2 .bcg {
-	background-color: #fff;
-	background-image: url(../img/berkeley.jpg);
-	background-attachment: fixed;
 }
 
 #slide-3 .bcg {
 	background-color: #171717;
-	background-image: url(../img/bloc-bg-contour.png);
-	background-attachment: fixed;
 }
 
-
-
-#slide-4 .bcg {
-	background-image: url(../img/desk.jpeg);
+#bcg-work {
+	position: absolute;
+	background-image: url(https://unsplash.imgix.net/uploads/14115890754139bc8568d/d5e1ad1d?q=75&fm=jpg&s=4d0356a1dd7b363ade2f7185d45c62fa);
+	-webkit-filter: blur(10px);
+	opacity: 0.12;
 	background-attachment: fixed;
+
 }
 
-#slide-5 .bcg {
+.background {
+	position: absolute;
+	top: 20px;
+	width: 100%;
+	height: calc(100% - 40px);
+}
+
+.background-img {
+	width: 100%;
+}
+
+.img-overlay {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.72;
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+#about-me {
+	height: 40vh;
 	background-color: #171717;
-	background-image: url(../img/bloc-bg-contour.png);
-	background-attachment: fixed;
+	width: 100%;
 }
 
-
-
-#divider .bcg {
-	background-color: #252525;
-}
 
 /* section settings */
 
 .section {
 	width: 100%;
-	height: 900px;
+	height: 100vh;
 	overflow: hidden;
+	position: relative;
 }
 
 .section-divide {
@@ -256,10 +268,14 @@ hr {
 /* Home Page */
 
 .dark-overlay {
-	background-color: #171717;
+	background-color: rgb(196, 159, 60);
+	background: -webkit-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(196,159,60,0.24)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(196,159,60,0.24)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(196,159,60,0.24)); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6),rgba(196,159,60,0.24)); /*Standard*/
 	width: 100%;
 	height: 100%;
-	opacity: 0.4;
+	opacity: 1;
 	position: absolute;
 }
 
@@ -1069,7 +1085,7 @@ img {
 	height: 90%;
 	top: 5%;
 	left: 5%;
-	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.72);
 	z-index: 100;
 	border: 1px solid rgb(196, 159, 60);
 	opacity: 0;
