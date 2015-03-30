@@ -209,9 +209,10 @@ a:hover {
 	}
 
 	#ink-splash {
-		width: 400px;
+		width: 350px;
 		opacity: 0.6;
-		top: 50%
+		top: 50%;
+		right: calc(-10% - 80px);;
 	}
 
 	#logo {
@@ -233,11 +234,8 @@ a:hover {
 	}
 
 	#coming-soon i {
-		text-align: center;
-		width: 100%;
 		font-size: 24px;
-		margin-top: 20px;
-		opacity: 0.72;
+		margin-top: 10px;
 	}
 
 	.card-title {
