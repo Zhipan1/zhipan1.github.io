@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Flickr Image Gallery</title>
+      <link rel="stylesheet" href="stylesheets/grid.css" />
+      <link rel="stylesheet" href="stylesheets/lighthouse.css" />
+      <link rel="stylesheet" href="stylesheets/gallery.css" />
+      <link rel="stylesheet" href="stylesheets/index.css" />
+   </head>
+   <body>
+      <div id='photo-gallery-header'>
+         <h1>Flickr Image Gallery</h1>
+         <h3>Search for images on Flickr</h3>
+         <input id='gallery-search' placeholder="type something to start searching">
+
+         <!-- Loading Icon from http://codepen.io/aurer/pen/jEGbA-->
+         <div id="gallery-loading-icon" title="2">
+           <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              width="30px" height="30px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+           <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+             <animateTransform attributeType="xml"
+               attributeName="transform"
+               type="rotate"
+               from="0 25 25"
+               to="360 25 25"
+               dur="0.6s"
+               repeatCount="indefinite"/>
+             </path>
+           </svg>
+         </div>
+         <!-- End Loading Icon -->
+
+      </div>
+      <div id='photo-grid'></div>
+      <div id='gallery-load-more'>Load More</div>
+      <div id='photo-lighthouse-overlay'></div>
+      <div id='photo-lighthouse'>
+         <div id='photo-lighthouse-display'>
+            <!-- load prev and next image in the background to speed up image loading -->
+            <img class='photo-lighthouse-display-image'></img>
+            <img class='photo-lighthouse-display-image'></img>
+            <img class='photo-lighthouse-display-image'></img>
+         </div>
+         <div id='photo-lighthouse-display-text'></div>
+         <div id='photo-lighthouse-prev' class='photo-lighthouse-nav'><img src="images/arrow_left.svg"></div>
+         <div id='photo-lighthouse-next' class='photo-lighthouse-nav'><img src="images/arrow_right.svg"></div>
+         <div id='photo-lighthouse-close'><img src="images/close.svg"></div>
+      </div>
+
+      <script src="javascripts/utility.js"></script>
+      <script src="javascripts/flickr.js"></script>
+      <script src="javascripts/grid.js"></script>
+      <script src="javascripts/lighthouse.js"></script>
+      <script src="javascripts/gallery.js"></script>
+      <script src="javascripts/main.js"></script>
+   </body>
+</html>
