@@ -1,64 +1,53 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Zhi Pan</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-        <link rel="stylesheet" href="assets/css/style2.css">
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-        </script>
-        <script src = "assets/js/script2.js"></script>
-    </head>
-    <body>
-        <section id="landing-page" class="section">
-        <img id="ink-splash" src="http://www.free-photo-gallery.org/photos-dir/coffee-stain.jpg">
-            <div class="center-container">
-                <div id="logo">Z | P</div>
-                <div id="info" class="center">
-                    <div class="title">Zhi Pan</div>
-                    <div class="description">
-                        <div class="description-item left">Frontend Developer</div>
-                        <div class="description-seperator">
-                            <div class="seperator-align">X</div>
-                        </div>
-                        <div class="description-item right">Designer</div>
-                        <div class="clear"></div>
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/glitch.css">
+    <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
+    <link rel="stylesheet" href="http://d2v52k3cl9vedd.cloudfront.net/vhs/0.1.0/vhs.min.css">
+    <title>~ Zhi Pan x Off White ~</title>
+  </head>
+  <body>
+    <div class='container'>
+        <div class='screen'>
+            <div class='screen-content background-0'>
+                <div class="glitch-container my-pic">
+                  <a href="https://twitter.com/itsmezhi" target="_blank">
+                    <div class="glitch glitch--style-1">
+                        <div class="glitch__img"></div>
+                        <div class="glitch__img"></div>
+                        <div class="glitch__img"></div>
+                        <div class="glitch__img"></div>
+                        <div class="glitch__img"></div>
                     </div>
-                    <div class="description">
-                        <div class="description-item left">Rails, HTML, CSS, Jquery</div>
-                        <div class="description-seperator">
-                            <div class="seperator-align">X</div>
-                        </div>
-                        <div class="description-item right">Sketch</div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="description">
-                        <div class="description-item left">
-                            <a href="assets/img/Resume.pdf">Resume</a>
-                        </div>
-                        <div class="description-seperator">
-                            <div class="seperator-align">X</div>
-                        </div>
-                        <div class="description-item right">
-                            <a href="mailto:zhipan@berkeley.edu">Contact</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+                  </a>
                 </div>
+                <a href='./assets/Resume.pdf' target='_blank' id='title' class='neon'>zhi pan</a>
             </div>
-        </section>
-        <section id="coming-soon" class="section">
-            <div class="overlay white"></div>
-            <i class="fa fa-chevron-down"></i>
-            <div id="coming-soon-card" class="card">
-                <div class="card-style"></div>
-                <div class="card-title">Site coming soon
-                </div>
-                <div class="card-body">You can view my old site <a href="index2.html">here</a>
-            </div>
-        </section>
-    </body>
+        </div>
+    </div>
+    <script type="text/javascript">
+      (() => {
+        var currentBackground = 0
+        var setRandomBackground = () => {
+          currentBackground = (currentBackground + 1) % 5
+          var newBackground = 'screen-content background-' + currentBackground
+          document.getElementsByClassName('screen-content')[0].className = newBackground
+        }
+        document.getElementsByClassName('container')[0].addEventListener('click', setRandomBackground)
+
+        setTimeout(() => {
+          var background = 0
+          document.body.className += ' tv-on'
+          document.getElementsByClassName('container')[0].className += ' tv-container'
+          setTimeout(() => {
+            document.getElementById('title').className += ' vhs-flicker vhs-delay-6'
+          }, 500)
+        }, 1500)
+      })()
+    </script>
+  </body>
 </html>
