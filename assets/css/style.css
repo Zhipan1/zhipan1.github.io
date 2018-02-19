@@ -145,17 +145,17 @@ html {
 }
 
 @media screen and (max-width : 800px) {
-  #menu, #audio-container {
+  #menu, #audio-container, #offwhite-band {
     display: none;
-  }
-
-  #offwhite-band {
-    width: 320px;
   }
 
   .screen-content {
     padding-bottom: 40px;
   }
+}
+
+#soundcloud {
+  display: none;
 }
 
 

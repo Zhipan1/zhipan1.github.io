@@ -41,7 +41,6 @@
         </div>
 
     </div>
-    <iframe id='soundcloud' src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/349300274"></iframe>
     <script type="text/javascript">
       (() => {
         var currentBackground = 0
@@ -69,24 +68,38 @@
           }, 2500)
         }, 2500)
 
-
-        var music = SC.Widget(document.getElementById('soundcloud'))
-
-        var playingMusic = false
-        var audioButton = document.getElementById('audio-button')
-        var toggleMusic = (e) => {
-          e.stopPropagation()
-          if (playingMusic) {
-            music.pause()
-            audioButton.innerHTML = 'audio: off'
-          } else {
-            music.play()
-            audioButton.innerHTML = 'audio: on'
+        function create(htmlStr) {
+          var frag = document.createDocumentFragment(),
+          temp = document.createElement('div')
+          temp.innerHTML = htmlStr
+          while (temp.firstChild) {
+            frag.appendChild(temp.firstChild)
           }
-          playingMusic = !playingMusic
+          return frag
         }
 
-        audioButton.addEventListener('click', toggleMusic)
+
+        if (window.innerWidth > 800) {
+          var scWidget = create("<iframe id='soundcloud' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/349300274'></iframe>")
+          document.body.insertBefore(scWidget, document.body.childNodes[0]);
+          var music = SC.Widget(document.getElementById('soundcloud'))
+
+          var playingMusic = false
+          var audioButton = document.getElementById('audio-button')
+          var toggleMusic = (e) => {
+            e.stopPropagation()
+            if (playingMusic) {
+              music.pause()
+              audioButton.innerHTML = 'audio: off'
+            } else {
+              music.play()
+              audioButton.innerHTML = 'audio: on'
+            }
+            playingMusic = !playingMusic
+          }
+
+          audioButton.addEventListener('click', toggleMusic)
+        }
 
         Array.from(document.getElementsByTagName('a')).map((el) => el.addEventListener('click', e => e.stopPropagation()))
       })()
