@@ -124,7 +124,7 @@ var startDesktopExperience = () => {
     setTimeout(() => {
       dontStartGlitching = false
       startGlitch()
-    }, 17100)
+    }, 17200)
   }
   var toggleMusic = (e) => {
     e.stopPropagation()
