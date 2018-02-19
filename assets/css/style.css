@@ -152,6 +152,10 @@ html {
   #offwhite-band {
     width: 320px;
   }
+
+  .screen-content {
+    padding-bottom: 40px;
+  }
 }
 
 

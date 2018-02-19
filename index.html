@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./assets/js/soundcloud.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/glitch.css">
     <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
@@ -38,7 +39,9 @@
                 <a href='https://www.instagram.com/zhipan1/' target='_blank' id='menu'><img src='./assets/img/menu.png' /></a>
             </div>
         </div>
+
     </div>
+    <iframe id='soundcloud' src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/349300274"></iframe>
     <script type="text/javascript">
       (() => {
         var currentBackground = 0
@@ -64,7 +67,28 @@
           setTimeout(() => {
             document.getElementById('title').className += ' vhs-flicker'
           }, 2500)
-        }, 2000)
+        }, 2500)
+
+
+        var music = SC.Widget(document.getElementById('soundcloud'))
+
+        var playingMusic = false
+        var audioButton = document.getElementById('audio-button')
+        var toggleMusic = (e) => {
+          e.stopPropagation()
+          if (playingMusic) {
+            music.pause()
+            audioButton.innerHTML = 'audio: off'
+          } else {
+            music.play()
+            audioButton.innerHTML = 'audio: on'
+          }
+          playingMusic = !playingMusic
+        }
+
+        audioButton.addEventListener('click', toggleMusic)
+
+        Array.from(document.getElementsByTagName('a')).map((el) => el.addEventListener('click', e => e.stopPropagation()))
       })()
     </script>
   </body>
