@@ -83,16 +83,17 @@
           return frag
         }
 
-        var dontStopGlitching = false
+        var stopRandomGlitching = false
+        var dontStartGlitching = false
 
         var startGlitch = () => {
+          if (dontStartGlitching) return
+
           var pic = document.getElementById('my-pic')
           pic.className = 'glitch glitch--style-1 active'
         }
 
         var stopGlitch = () => {
-          if (dontStopGlitching) return
-
           var pic = document.getElementById('my-pic')
           pic.className = 'glitch glitch--style-1'
         }
@@ -103,7 +104,7 @@
         }
 
         var startRandomGlitching = () => {
-          if (dontStopGlitching) return
+          if (stopRandomGlitching) return
 
           var nextGlitch = Math.max(1, Math.random() * 5) * 1000
           var glitchDuration = Math.max(0.3, Math.random() * 4) * 1000
@@ -153,7 +154,7 @@
           var endSong = () => {
             audioButton.innerHTML = 'audio: off'
             sad.className = 'neon-2'
-            dontStopGlitching = false
+            stopRandomGlitching = false
             stopGlitch()
             startRandomGlitching()
           }
@@ -163,11 +164,12 @@
             setTimeout(() => {
               sad.className = 'neon-2 vhs-flicker'
             }, 100)
+            dontStartGlitching = true
+            stopRandomGlitching = true
             setTimeout(() => {
-              // 17200
-              dontStopGlitching = true
+              dontStartGlitching = false
               startGlitch()
-            }, 700)
+            }, 17100)
           }
           var toggleMusic = (e) => {
             e.stopPropagation()
