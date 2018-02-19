@@ -66,7 +66,7 @@ html {
 
 #audio-container {
   position: absolute;
-  right: -170px;
+  right: -175px;
   top: 30px;
 }
 
@@ -74,8 +74,9 @@ html {
   font-family: 'Megrim', cursive;
   font-size: 26px;
   position: absolute;
-  top: 30px;
-  left: 76px;
+  top: 26px;
+  left: 71px;
+  padding: 5px;
 }
 
 #menu {
@@ -148,7 +149,7 @@ html {
   text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 40px #4dd0e1, 0 0 80px #4dd0e1, 0 0 90px #4dd0e1, 0 0 100px #4dd0e1, 0 0 150px #4dd0e1;
 }
 
-.neon:hover {
+#audio-container:hover .neon, .neon:hover {
   transition: 0.2s ease;
   text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 40px #00fff3, 0 0 80px #00fff3, 0 0 90px #00fff3, 0 0 100px #00fff3, 0 0 150px #00fff3;
 }

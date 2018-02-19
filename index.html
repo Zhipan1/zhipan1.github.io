@@ -67,6 +67,8 @@
           document.getElementsByClassName('container')[0].className += ' tv-container'
           setTimeout(() => {
             document.getElementById('title').className += ' vhs-flicker'
+            startRandomGlitching()
+            startRandomFlickering()
           }, 2500)
           setTimeout(setNextBackground, 500)
         }, 2500)
@@ -81,6 +83,59 @@
           return frag
         }
 
+        var dontStopGlitching = false
+
+        var startGlitch = () => {
+          var pic = document.getElementById('my-pic')
+          pic.className = 'glitch glitch--style-1 active'
+        }
+
+        var stopGlitch = () => {
+          if (dontStopGlitching) return
+
+          var pic = document.getElementById('my-pic')
+          pic.className = 'glitch glitch--style-1'
+        }
+
+        var glitchFor = (milliseconds = 1500) => {
+          startGlitch()
+          setTimeout(stopGlitch, milliseconds)
+        }
+
+        var startRandomGlitching = () => {
+          if (dontStopGlitching) return
+
+          var nextGlitch = Math.max(1, Math.random() * 5) * 1000
+          var glitchDuration = Math.max(0.3, Math.random() * 4) * 1000
+          console.log(nextGlitch, glitchDuration)
+          setTimeout(() => glitchFor(glitchDuration), nextGlitch)
+          setTimeout(startRandomGlitching, nextGlitch + glitchDuration + 500)
+        }
+
+        var flickerName = () => {
+          var title = document.getElementById('title')
+          var baseClass = 'neon no-select'
+          title.className = baseClass
+          setTimeout(() => {
+            title.className = baseClass + ' vhs-flicker vhs-reverse'
+          }, 30)
+          setTimeout(() => {
+            title.className = baseClass = baseClass
+          }, 900)
+          setTimeout(() => {
+            title.className = baseClass = baseClass + ' vhs-flicker'
+          }, 1100)
+        }
+
+        var startRandomFlickering = () => {
+          var nextFlicker = Math.max(5, Math.random() * 10) * 1000
+          console.log(nextFlicker)
+          setTimeout(flickerName, nextFlicker)
+          setTimeout(startRandomFlickering, nextFlicker + 500)
+        }
+
+        window.flickerName = flickerName
+
 
         if (window.innerWidth > 800) {
           var scWidget = create("<iframe id='soundcloud' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/268788349'></iframe>")
@@ -91,27 +146,43 @@
           var audioButton = document.getElementById('audio-button')
           var sad = document.getElementById('sad-boiz')
           var pic = document.getElementById('my-pic')
+          var stopSong = () => {
+            music.pause()
+            audioButton.innerHTML = 'audio: off'
+            sad.className = 'neon-2'
+            stopGlitch()
+          }
+          var endSong = () => {
+            audioButton.innerHTML = 'audio: off'
+            sad.className = 'neon-2'
+            dontStopGlitching = false
+            stopGlitch()
+          }
+          var startSong = () => {
+            music.play()
+            audioButton.innerHTML = 'audio: on'
+            setTimeout(() => {
+              sad.className = 'neon-2 vhs-flicker'
+            }, 100)
+            setTimeout(() => {
+              // 17200
+              dontStopGlitching = true
+              startGlitch()
+            }, 700)
+          }
           var toggleMusic = (e) => {
             e.stopPropagation()
             if (playingMusic) {
-              music.pause()
-              audioButton.innerHTML = 'audio: off'
-              sad.className = 'neon-2'
-              pic.className = 'glitch glitch--style-1'
+              stopSong()
             } else {
-              music.play()
-              audioButton.innerHTML = 'audio: on'
-              setTimeout(() => {
-                sad.className = 'neon-2 vhs-flicker'
-              }, 100)
-              setTimeout(() => {
-                pic.className = 'glitch glitch--style-1 active'
-              }, 17200)
+              startSong()
             }
             playingMusic = !playingMusic
           }
 
-          audioButton.addEventListener('click', toggleMusic)
+          music.bind(SC.Widget.Events.FINISH, endSong)
+
+          document.getElementById('audio-container').addEventListener('click', toggleMusic)
         }
 
         Array.from(document.getElementsByTagName('a')).map((el) => el.addEventListener('click', e => e.stopPropagation()))
