@@ -160,7 +160,7 @@
   color: var(--color-subtitle);
 }
 
-.glitch:hover + .grid__item-title span {
+.glitch.active + .grid__item-title span, .glitch:hover + .grid__item-title span {
   opacity: 1;
   animation: glitch-anim-text 0.5s linear;
 }
@@ -244,44 +244,44 @@
 /* Hovers */
 
 /* On hover we show the 2nd, 3rd, 4th and 5th image*/
-.glitch:hover .glitch__img:nth-child(n+2) {
+.glitch.active .glitch__img:nth-child(n+2), .glitch:hover .glitch__img:nth-child(n+2) {
   opacity: 1;
 }
 
 /* Hover animations for horizontal case */
-.glitch:hover .glitch__img:nth-child(2) {
+.glitch.active .glitch__img:nth-child(2), .glitch:hover .glitch__img:nth-child(2) {
   transform: translate3d(var(--gap-horizontal),0,0);
   animation: glitch-anim-1-horizontal var(--time-anim) infinite linear alternate;
 }
 
-.glitch:hover > .glitch__img:nth-child(3) {
+.glitch.active > .glitch__img:nth-child(3), .glitch:hover > .glitch__img:nth-child(3) {
   transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0);
   animation: glitch-anim-2-horizontal var(--time-anim) infinite linear alternate;
 }
 
-.glitch:hover > .glitch__img:nth-child(4) {
+.glitch.active > .glitch__img:nth-child(4), .glitch:hover > .glitch__img:nth-child(4) {
   transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1,-1,1);
   animation: glitch-anim-3-horizontal var(--time-anim) infinite linear alternate;
 }
 
 /* Hover animations for vertical case */
-.glitch--vertical:hover .glitch__img:nth-child(2) {
+.glitch--vertical.active .glitch__img:nth-child(2), .glitch--vertical:hover .glitch__img:nth-child(2) {
   transform: translate3d(0, var(--gap-vertical), 0);
   animation: glitch-anim-1-vertical var(--time-anim) infinite linear alternate;
 }
 
-.glitch--vertical:hover > .glitch__img:nth-child(3) {
+.glitch--vertical.active > .glitch__img:nth-child(3), .glitch--vertical:hover > .glitch__img:nth-child(3) {
   transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0);
   animation: glitch-anim-2-vertical var(--time-anim) infinite linear alternate;
 }
 
-.glitch--vertical:hover > .glitch__img:nth-child(4) {
+.glitch--vertical.active > .glitch__img:nth-child(4), .glitch--vertical:hover > .glitch__img:nth-child(4) {
   transform: translate3d(calc(-1 * var(--gap-horizontal)), 0, 0) scale3d(-1,-1,1);
   animation: glitch-anim-3-vertical var(--time-anim) infinite linear alternate;
 }
 
 /* Hover flash animation on last image */
-.glitch:hover > .glitch__img:nth-child(5) {
+.glitch.active > .glitch__img:nth-child(5), .glitch:hover > .glitch__img:nth-child(5) {
   animation: glitch-anim-flash 0.5s steps(1,end) infinite;
 }
 

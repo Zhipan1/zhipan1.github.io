@@ -16,16 +16,16 @@
   <body>
     <div class='container'>
         <div class='screen'>
-            <div class='screen-content background-0'>
+            <div class='screen-content background-'>
 
                 <div id="audio-container">
                   <img src='./assets/img/tape.png' id='audio-container-tape' />
                   <div id='audio-button' class="neon vhs-flicker no-select">audio: off</div>
                 </div>
 
-                <div class="glitch-container my-pic">
+                <div class="glitch-container">
                   <a style='cursor: inherit;' href="https://twitter.com/itsmezhi" target="_blank">
-                    <div class="glitch glitch--style-1">
+                    <div class="glitch glitch--style-1" id='my-pic'>
                       <div class="glitch__img"></div>
                       <div class="glitch__img"></div>
                       <div class="glitch__img"></div>
@@ -40,14 +40,14 @@
                 </a>
 
                 <a href='./assets/Resume.pdf' target='_blank' id='title' class='neon no-select'>zhi pan</a>
-                <div id='sad-boiz' class="neon-2">sad boi hourz activated</div>
+                <div id='sad-boiz' class="neon-2">> wavy hourz activated</div>
             </div>
         </div>
 
     </div>
     <script type="text/javascript">
       (() => {
-        var currentBackground = 0
+        var currentBackground = 4
         var setNextBackground = (e, flicker) => {
           currentBackground = (currentBackground + 1) % 5
           var newBackground = 'screen-content background-' + currentBackground
@@ -64,12 +64,11 @@
         document.getElementsByClassName('screen-content')[0].addEventListener('click', setNextBackground)
 
         setTimeout(() => {
-          var background = 0
-          document.body.className += ' tv-on'
           document.getElementsByClassName('container')[0].className += ' tv-container'
           setTimeout(() => {
             document.getElementById('title').className += ' vhs-flicker'
           }, 2500)
+          setTimeout(setNextBackground, 500)
         }, 2500)
 
         function create(htmlStr) {
@@ -91,16 +90,23 @@
           var playingMusic = false
           var audioButton = document.getElementById('audio-button')
           var sad = document.getElementById('sad-boiz')
+          var pic = document.getElementById('my-pic')
           var toggleMusic = (e) => {
             e.stopPropagation()
             if (playingMusic) {
               music.pause()
               audioButton.innerHTML = 'audio: off'
               sad.className = 'neon-2'
+              pic.className = 'glitch glitch--style-1'
             } else {
               music.play()
               audioButton.innerHTML = 'audio: on'
-              setTimeout(() => {sad.className = 'neon-2 vhs-flicker'}, 100)
+              setTimeout(() => {
+                sad.className = 'neon-2 vhs-flicker'
+              }, 100)
+              setTimeout(() => {
+                pic.className = 'glitch glitch--style-1 active'
+              }, 17200)
             }
             playingMusic = !playingMusic
           }

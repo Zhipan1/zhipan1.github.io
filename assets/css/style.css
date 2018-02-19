@@ -6,11 +6,6 @@ body {
   background-color: #121010;
 }
 
-body:not(.tv-on) {
-  background-image: url(../img/copyright.gif);
-  background-size: cover;
-}
-
 html {
   box-sizing: border-box;
   width: 100%;
@@ -26,10 +21,21 @@ html {
   cursor: url(../img/remote.png), auto;
   border: 6px solid #121010;
   border-radius: 4% / 8%;
+  overflow: hidden;
 }
 
-.container:not(.tv-container) {
-  opacity: 0;
+.screen {
+  height: 100%;
+  width: 100%;
+}
+
+.container:not(.tv-container) .screen {
+  background-image: url(../img/copyright.gif);
+  background-size: cover;
+}
+
+.container:not(.tv-container) .screen-content {
+  opacity: 0
 }
 
 #title {
@@ -47,7 +53,7 @@ html {
   user-select: none;
 }
 
-.my-pic {
+#my-pic {
   margin-left: 8px;
 }
 
