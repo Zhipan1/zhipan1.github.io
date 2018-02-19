@@ -102,6 +102,7 @@ html {
 }
 
 .screen-background {
+  background-color: #121010;
   position: absolute;
   display: block;
   top: 0;
