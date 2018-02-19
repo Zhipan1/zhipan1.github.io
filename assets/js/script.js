@@ -175,11 +175,13 @@ var init = () => {
     'water.gif'
   ]
 
-  preloadImages(imageUrls, turnOnTv)
-  attachEventListeners()
-  if (window.innerWidth > 800) {
-    startDesktopExperience()
-  }
+  preloadImages(imageUrls, () => {
+    turnOnTv()
+    attachEventListeners()
+    if (window.innerWidth > 800) {
+      startDesktopExperience()
+    }
+  })
 }
 
 init()
