@@ -7,7 +7,7 @@ body {
 }
 
 body:not(.tv-on) {
-  background-image: url(https://i.imgur.com/yfP6RMU.gif);
+  background-image: url(../img/copyright.gif);
   background-size: cover;
 }
 
@@ -34,9 +34,13 @@ html {
 
 #title {
 	margin-top: 20px;
-  font-size: 36px;
+  font-size: 42px;
   font-family: 'Megrim', cursive;
   text-decoration: none; /* no underline */
+  cursor: inherit;
+}
+
+.no-select {
   webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -47,6 +51,46 @@ html {
   margin-left: 8px;
 }
 
+#offwhite-band {
+  position: absolute;
+  left: -31px;
+  top: -72px;
+}
+
+#audio-container {
+  position: absolute;
+  right: -170px;
+  top: 30px;
+}
+
+#audio-button {
+  font-family: 'Megrim', cursive;
+  font-size: 26px;
+  position: absolute;
+  top: 30px;
+  left: 76px;
+}
+
+#menu {
+  position: absolute;
+  bottom: -100px;
+  right: -20px;
+  cursor: inherit;
+  transition: 0.3s ease;
+}
+
+#menu:hover {
+  bottom: -96px;
+}
+
+#open-late {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  font-family: 'Megrim', cursive;
+  font-size: 16px;
+}
+
 .screen-content {
   width: 100%;
   height: 100%;
@@ -55,34 +99,47 @@ html {
   align-items: center;
   justify-content: center;
   padding-bottom: 80px;
+}
+
+.screen-background {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   background-size: cover;
 }
 
 .background-0 {
-  background-image: url(https://78.media.tumblr.com/214b2a61d6b4a3d3e5366b22fe80cdea/tumblr_p1sm1eXGVU1vvi066o1_500.gif);
+  background-image: url(../img/beach.gif);
 }
 
 .background-1 {
-  background-image: url(https://thumbs.gfycat.com/PoisedFatAmericantoad-max-1mb.gif);
+  background-image: url(../img/palm.gif);
 }
 
 .background-2 {
-  background-image: url(https://78.media.tumblr.com/c681305d19eab3a06f2064c6b80037cb/tumblr_oglli91Hew1voq0xoo1_400.gif);
+  background-image: url(../img/water.gif);
 }
 
 .background-3 {
-  background-image: url(https://78.media.tumblr.com/9293fd701f3c0cfc3a287da4b944c481/tumblr_oz55rrd4ci1vu5dwpo1_500.gif);
+  background-image: url(../img/island.gif);
 }
 
 .background-4 {
-  background-image: url(https://media.giphy.com/media/b2OGEdoXCm5BC/giphy.gif);
+  background-image: url(../img/party.gif);
 }
 
 
 .neon {
-  cursor: pointer;
   color: #FFFFFF;
   text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 40px #FF00DE, 0 0 80px #FF00DE, 0 0 90px #FF00DE, 0 0 100px #FF00DE, 0 0 150px #FF00DE;
+}
+
+.neon-2 {
+  color: #FFFFFF;
+  text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 40px #4dd0e1, 0 0 80px #4dd0e1, 0 0 90px #4dd0e1, 0 0 100px #4dd0e1, 0 0 150px #4dd0e1;
 }
 
 .neon:hover {
@@ -90,7 +147,7 @@ html {
   text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 40px #00fff3, 0 0 80px #00fff3, 0 0 90px #00fff3, 0 0 100px #00fff3, 0 0 150px #00fff3;
 }
 
-.neon:not(.vhs-flicker) {
+.neon:not(.vhs-flicker), .neon-2:not(.vhs-flicker) {
   opacity: 0;
 }
 
@@ -193,7 +250,7 @@ html {
 }
 
 .tv-container::after {
-  animation: flicker 0.6s infinite;
+  /*animation: flicker 0.6s infinite;*/
 }
 
 @keyframes turn-on {

@@ -8,44 +8,64 @@
     <link rel="stylesheet" href="./assets/css/glitch.css">
     <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
     <link rel="stylesheet" href="http://d2v52k3cl9vedd.cloudfront.net/vhs/0.1.0/vhs.min.css">
-    <title>~ Zhi Pan x Off White ~</title>
+    <title>~ zhi pan x off white ~</title>
   </head>
   <body>
     <div class='container'>
         <div class='screen'>
-            <div class='screen-content background-0'>
+            <div class='screen-content'>
+                <div class="screen-background"></div>
+                <img src='./assets/img/offwhite.png' id='offwhite-band' />
+
+                <div id="audio-container">
+                  <img src='./assets/img/tape.png' id='audio-container-tape' />
+                  <div id='audio-button' class="neon vhs-flicker no-select">audio: off</div>
+                </div>
+
                 <div class="glitch-container my-pic">
-                  <a href="https://twitter.com/itsmezhi" target="_blank">
+                  <a style='cursor: inherit;' href="https://twitter.com/itsmezhi" target="_blank">
                     <div class="glitch glitch--style-1">
-                        <div class="glitch__img"></div>
-                        <div class="glitch__img"></div>
-                        <div class="glitch__img"></div>
-                        <div class="glitch__img"></div>
-                        <div class="glitch__img"></div>
+                      <div class="glitch__img"></div>
+                      <div class="glitch__img"></div>
+                      <div class="glitch__img"></div>
+                      <div class="glitch__img"></div>
+                      <div class="glitch__img"></div>
                     </div>
                   </a>
                 </div>
-                <a href='./assets/Resume.pdf' target='_blank' id='title' class='neon'>zhi pan</a>
+
+                <a href='./assets/Resume.pdf' target='_blank' id='title' class='neon no-select'>zhi pan</a>
+                <a href='https://www.instagram.com/zhipan1/' target='_blank' id='menu'><img src='./assets/img/menu.png' /></a>
             </div>
         </div>
     </div>
     <script type="text/javascript">
       (() => {
-        var currentBackground = 0
-        var setRandomBackground = () => {
+        var currentBackground = 4
+        var setNextBackground = (e, flicker=false) => {
           currentBackground = (currentBackground + 1) % 5
-          var newBackground = 'screen-content background-' + currentBackground
-          document.getElementsByClassName('screen-content')[0].className = newBackground
+          var newBackground = 'screen-background background-' + currentBackground
+          var screen = document.getElementsByClassName('screen-background')[0]
+          if (flicker) {
+            screen.className = newBackground + ' vhs-flicker'
+            setTimeout(() => {
+              screen.className = newBackground
+            }, 1000)
+          } else {
+            screen.className = newBackground
+          }
         }
-        document.getElementsByClassName('container')[0].addEventListener('click', setRandomBackground)
+        document.getElementsByClassName('screen-background')[0].addEventListener('click', setNextBackground)
 
         setTimeout(() => {
           var background = 0
           document.body.className += ' tv-on'
           document.getElementsByClassName('container')[0].className += ' tv-container'
           setTimeout(() => {
-            document.getElementById('title').className += ' vhs-flicker vhs-delay-6'
-          }, 500)
+            document.getElementById('title').className += ' vhs-flicker'
+          }, 2500)
+
+          setTimeout(() => setNextBackground(null, true), 3500)
         }, 1500)
       })()
     </script>

@@ -4,8 +4,8 @@
   --color-link: #454847;
   --color-link-hover: #fff;
   --color-info: #454847;
-  --glitch-width: 160px;
-  --glitch-height: calc(160px * 1.9);
+  --glitch-width: 180px;
+  --glitch-height: calc(180px * 1.9);
   --color-title: #fff;
   --color-subtitle: #30efbf;
 }
@@ -173,9 +173,7 @@
   margin: 0 auto;
 }
 
-.glitch:hover {
-  cursor: pointer;
-}
+.glitch:hover {}
 
 .glitch__img {
   position: absolute;
