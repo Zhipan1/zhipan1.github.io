@@ -13,8 +13,7 @@
   <body>
     <div class='container'>
         <div class='screen'>
-            <div class='screen-content'>
-                <div class="screen-background"></div>
+            <div class='screen-content background-0'>
                 <img src='./assets/img/offwhite.png' id='offwhite-band' />
 
                 <div id="audio-container">
@@ -41,11 +40,11 @@
     </div>
     <script type="text/javascript">
       (() => {
-        var currentBackground = 4
-        var setNextBackground = (e, flicker=false) => {
+        var currentBackground = 0
+        var setNextBackground = (e, flicker) => {
           currentBackground = (currentBackground + 1) % 5
-          var newBackground = 'screen-background background-' + currentBackground
-          var screen = document.getElementsByClassName('screen-background')[0]
+          var newBackground = 'screen-content background-' + currentBackground
+          var screen = document.getElementsByClassName('screen-content')[0]
           if (flicker) {
             screen.className = newBackground + ' vhs-flicker'
             setTimeout(() => {
@@ -55,7 +54,7 @@
             screen.className = newBackground
           }
         }
-        document.getElementsByClassName('screen-background')[0].addEventListener('click', setNextBackground)
+        document.getElementsByClassName('screen-content')[0].addEventListener('click', setNextBackground)
 
         setTimeout(() => {
           var background = 0
@@ -64,8 +63,6 @@
           setTimeout(() => {
             document.getElementById('title').className += ' vhs-flicker'
           }, 2500)
-
-          setTimeout(() => setNextBackground(null, true), 3500)
         }, 2000)
       })()
     </script>
