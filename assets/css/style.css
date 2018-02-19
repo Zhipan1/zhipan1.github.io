@@ -55,6 +55,7 @@ html {
   position: absolute;
   left: -31px;
   top: -72px;
+  cursor: inherit;
 }
 
 #audio-container {
