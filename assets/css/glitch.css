@@ -10,6 +10,13 @@
   --color-subtitle: #30efbf;
 }
 
+@media screen and (max-width : 800px) {
+  .glitch-container {
+    --glitch-width: 160px;
+    --glitch-height: calc(160px * 1.9);
+  }
+}
+
 .glitch--style-1 {
   --gap-horizontal: 20px;
   --gap-vertical: 2px;

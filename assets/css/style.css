@@ -148,6 +148,10 @@ html {
   #menu, #audio-container {
     display: none;
   }
+
+  #offwhite-band {
+    width: 320px;
+  }
 }
 
 
