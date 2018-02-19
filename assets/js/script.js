@@ -176,6 +176,7 @@ var init = () => {
   ]
 
   preloadImages(imageUrls, turnOnTv)
+  attachEventListeners()
   if (window.innerWidth > 800) {
     startDesktopExperience()
   }
