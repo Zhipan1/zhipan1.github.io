@@ -125,6 +125,12 @@ html {
   background-image: url(../img/party.gif);
 }
 
+#sad-boiz {
+  font-family: 'Megrim', cursive;
+  margin-top: 15px;
+  margin-bottom: -30px;
+  font-size: 20px;
+}
 
 .neon {
   color: #FFFFFF;
@@ -146,7 +152,7 @@ html {
 }
 
 @media screen and (max-width : 800px) {
-  #menu, #audio-container, #offwhite-band {
+  #menu, #audio-container, #offwhite-band, #sad-boiz {
     display: none;
   }
 

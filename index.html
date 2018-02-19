@@ -40,6 +40,7 @@
                 </a>
 
                 <a href='./assets/Resume.pdf' target='_blank' id='title' class='neon no-select'>zhi pan</a>
+                <div id='sad-boiz' class="neon-2">sad boi hourz activated</div>
             </div>
         </div>
 
@@ -83,20 +84,23 @@
 
 
         if (window.innerWidth > 800) {
-          var scWidget = create("<iframe id='soundcloud' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/349300274'></iframe>")
+          var scWidget = create("<iframe id='soundcloud' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/268788349'></iframe>")
           document.body.insertBefore(scWidget, document.body.childNodes[0]);
           var music = SC.Widget(document.getElementById('soundcloud'))
 
           var playingMusic = false
           var audioButton = document.getElementById('audio-button')
+          var sad = document.getElementById('sad-boiz')
           var toggleMusic = (e) => {
             e.stopPropagation()
             if (playingMusic) {
               music.pause()
               audioButton.innerHTML = 'audio: off'
+              sad.className = 'neon-2'
             } else {
               music.play()
               audioButton.innerHTML = 'audio: on'
+              setTimeout(() => {sad.className = 'neon-2 vhs-flicker'}, 100)
             }
             playingMusic = !playingMusic
           }
