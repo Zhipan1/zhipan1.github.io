@@ -91,30 +91,74 @@ var startRandomFlickering = () => {
   setTimeout(startRandomFlickering, nextFlicker + 500)
 }
 
+class Player {
+  constructor(trackId, numSongs) {
+    this.currentSongIndex = 0
+    this.numSongs = numSongs
+    this.player = this.createWidget(trackId)
+    this.player.bind(SC.Widget.Events.FINISH, () => this.prev()) // loop when song ends
+  }
+
+  createWidget(trackId) {
+    let id = 'soundcloud-' + trackId
+    let url = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/' + trackId
+    var scWidget = create("<iframe class='soundcloud' id='" + id + "' src='" + url + "'></iframe>")
+    document.body.insertBefore(scWidget, document.body.childNodes[0])
+    return SC.Widget(id)
+  }
+
+  play() {
+    this.player.play()
+  }
+
+  pause() {
+    this.player.pause()
+  }
+
+  restartTracklist() {
+    this.player.skip(0)
+  }
+
+  prev() {
+    this.player.prev()
+  }
+
+  next(autoPlay = true) {
+    let newIndex = (this.currentSongIndex + 1) % this.numSongs
+    if (newIndex == 0) {
+      this.restartTracklist()
+    } else {
+      this.player.next()
+    }
+    if (!autoPlay) {
+      this.pause()
+    }
+    this.currentSongIndex = newIndex
+  }
+
+  onSongEnd(onEnd) {
+    this.player.bind(SC.Widget.Events.FINISH, onEnd)
+  }
+}
+
 var startDesktopExperience = () => {
-  var scWidget = create("<iframe id='soundcloud' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/268788349'></iframe>")
-  document.body.insertBefore(scWidget, document.body.childNodes[0]);
-  var music = SC.Widget(document.getElementById('soundcloud'))
+  var player = new Player('playlists/452830602', 5)
 
   var playingMusic = false
   var audioButton = document.getElementById('audio-button')
   var sad = document.getElementById('sad-boiz')
   var pic = document.getElementById('my-pic')
   var stopSong = () => {
-    music.pause()
-    audioButton.innerHTML = 'audio: off'
-    sad.className = 'neon-2'
-    stopGlitch()
-  }
-  var endSong = () => {
+    player.pause()
     audioButton.innerHTML = 'audio: off'
     sad.className = 'neon-2'
     stopRandomGlitching = false
     stopGlitch()
     startRandomGlitching()
   }
+
   var startSong = () => {
-    music.play()
+    player.play()
     audioButton.innerHTML = 'audio: on'
     setTimeout(() => {
       sad.className = 'neon-2 vhs-flicker'
@@ -126,6 +170,7 @@ var startDesktopExperience = () => {
       startGlitch()
     }, 17200)
   }
+
   var toggleMusic = (e) => {
     e.stopPropagation()
     if (playingMusic) {
@@ -136,7 +181,9 @@ var startDesktopExperience = () => {
     playingMusic = !playingMusic
   }
 
-  music.bind(SC.Widget.Events.FINISH, endSong)
+  document.getElementsByClassName('screen-content')[0].addEventListener('click', () => {
+    player.next(playingMusic)
+  })
 
   document.getElementById('audio-container').addEventListener('click', toggleMusic)
 }

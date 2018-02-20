@@ -168,7 +168,7 @@ html {
   }
 }
 
-#soundcloud {
+.soundcloud {
   opacity: 0;
   position: absolute;
   top: -400px;
