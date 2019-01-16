@@ -19,7 +19,7 @@ var turnOnTv = () => {
     document.getElementsByClassName('container')[0].className += ' tv-container'
     setTimeout(() => {
       document.getElementById('title').className += ' vhs-flicker'
-      startRandomGlitching()
+      // startRandomGlitching()
       startRandomFlickering()
     }, 2500)
     setTimeout(setNextBackground, 500)
@@ -211,15 +211,10 @@ function preloadImages(imageUrls, onLoaded, filePathPrefix = './assets/img/') {
 var init = () => {
   var imageUrls = [
     'beach.gif',
-    'copyright.gif',
-    'island.gif',
     'me2.png',
     'offwhite.png',
-    'palm.gif',
-    'party.gif',
     'remote.png',
-    'tape.png',
-    'water.gif'
+    'tape.png'
   ]
 
   preloadImages(imageUrls, () => {
